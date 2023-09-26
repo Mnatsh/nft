@@ -1,0 +1,31 @@
+// исходные параметры коллекции
+{
+  "addressCollection": "EQD0QjtaWUSvY02cuUgBYFl_JsFfe8hqeeDUD2gDIHxFT-F_",
+  "next_item_index": 7,
+  "collection_content": "https://seal-meta.4everland.store/meta/seal_col.json",
+  "owner_address": "EQBorVzTCXIDgE34MxvmlH40uT7saFpkbBWTa9vUEFAfwBEB",
+  "offchain": "offchain",
+  "common_content": "https://seal-meta.4everland.store/meta/",
+  "individual_nft_content": "hello",
+  "royality_perc": 15,
+  "royality_int2": 100,
+  "royality_address": "EQA01D1VQtR8-jWxRzbKkGAZtRhmvCJq6ojdShlENfqBl1LE",
+  "pref": 1
+}
+
+// меняем параметры колеекции на:
+{
+  "addressCollection": "EQD0QjtaWUSvY02cuUgBYFl_JsFfe8hqeeDUD2gDIHxFT-F_",
+  "next_item_index": 7,
+  "collection_content": "https://seal-meta.4everland.store/meta/seal_col.json",
+  "owner_address": "EQBorVzTCXIDgE34MxvmlH40uT7saFpkbBWTa9vUEFAfwBEB",
+  "offchain": "offchain",
+  "common_content": "EQBorVzTCXIDgE34",
+  "individual_nft_content": "hello",
+  "royality_perc": 33,
+  "royality_int2": 550,
+  "royality_address": "EQBorVzTCXIDgE34MxvmlH40uT7saFpkbBWTa9vUEFAfwBEB",
+  "pref": 1
+}
+
+
