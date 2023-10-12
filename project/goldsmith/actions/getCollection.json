@@ -1,0 +1,13 @@
+{
+  "addressCollection": "EQD2eijx7B76DQPqtPQNmeZcglY4ZeoKRRpo6uXTZ2nglUyK",
+  "next_item_index": 40,
+  "collection_content": "https://goldsmith.4everland.store/meta/goldsmithCollection.json",
+  "owner_address": "EQBorVzTCXIDgE34MxvmlH40uT7saFpkbBWTa9vUEFAfwBEB",
+  "offchain": "offchain",
+  "common_content": "https://goldsmith.4everland.store/meta/",
+  "individual_nft_content": "hello",
+  "royality_perc": 33,
+  "royality_int2": 100,
+  "royality_address": "EQAzivYp8x0kDWV064wJpAesTAZ1UNpuUBaPdKCz5Be5XmUO",
+  "pref": 1
+}

@@ -1,4 +1,4 @@
-import { NftCollection } from '../wrappers/NftCollection';
+import { NftCollection, PathProject } from '../wrappers/NftCollection';
 import { NetworkProvider, sleep } from '@ton-community/blueprint';
 import { Address, beginCell } from "ton";
 
@@ -23,7 +23,10 @@ export async function run(provider: NetworkProvider, args: string[]) {
   const ui = provider.ui();
 
   const fs = require('fs');
-  let paramCollection : InfoCollectionParam = JSON.parse(fs.readFileSync("scripts/paramsNft/getCollection.json"));
+
+  let pathProject : PathProject = JSON.parse(fs.readFileSync("pathProject.json"));
+  let paramCollection : InfoCollectionParam = 
+         JSON.parse(fs.readFileSync(pathProject.pathProject + "getCollection.json"));
 
   const nftCollection = provider.open(NftCollection.createFromAddress(Address.parse(paramCollection.addressCollection)));
 
@@ -52,7 +55,7 @@ export async function run(provider: NetworkProvider, args: string[]) {
       paramCollection.royality_int2 = counterValue3.readNumber();
       paramCollection.royality_address = counterValue3.readAddress().toString();
   
-  fs.writeFileSync("scripts/paramsNft/getCollection.json", JSON.stringify(paramCollection, null, 2));
+  fs.writeFileSync(pathProject.pathProject + "getCollection.json", JSON.stringify(paramCollection, null, 2));
 
   ui.write('Параметры коллекции получены и сохранены!');
 }

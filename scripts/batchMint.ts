@@ -1,5 +1,5 @@
 import { Address, toNano } from 'ton-core';
-import { NftCollection } from '../wrappers/NftCollection';
+import { NftCollection, PathProject } from '../wrappers/NftCollection';
 import { NetworkProvider, sleep } from '@ton-community/blueprint';
 import { randomAddress } from '@ton-community/test-utils';
 
@@ -28,8 +28,10 @@ export async function run(provider: NetworkProvider, args: string[]) {
     //const address = Address.parse(args.length > 0 ? args[0] : await ui.input('Collection address'));
 
     const fs = require('fs');
-    let paramNfts : ParamNfts = JSON.parse(fs.readFileSync("scripts/paramsNft/newNftBatchMint.json"));  
-
+    let pathProject : PathProject = JSON.parse(fs.readFileSync("pathProject.json"));
+    let paramNfts : ParamNfts = 
+        JSON.parse(fs.readFileSync(pathProject.pathProject + "newNftBatchMint.json"));  
+console.log("json",paramNfts);
     const nftCollection = provider.open(NftCollection.createFromAddress(Address.parse(paramNfts.collectionAddress)));
 
     //заполнить массив параметров пакета Nft
@@ -47,12 +49,12 @@ export async function run(provider: NetworkProvider, args: string[]) {
         nftC.content = `${nftC.index}.json`;
         nftsNew.push(nftC);
     }
-
-    await nftCollection.sendBatchMint(provider.sender(), {
+  console.log("nftsNew",nftsNew);
+     await nftCollection.sendBatchMint(provider.sender(), {
         value: toNano(paramNfts.value),
         queryId: Date.now(),
         nfts: nftsNew
     });
-
+/* */
     ui.write('Batch of nfts deployed successfully!');
 }

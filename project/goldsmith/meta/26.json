@@ -1,0 +1,18 @@
+{
+  "name": "Обручальные кольца из красного золота",
+  "description": "пара колец из красного золота с гравировкой внутри",
+  "image": "https://goldsmith.4everland.store/img/26.jpg",
+  "content_url": " ",
+  "attributes": [
+    {
+      "trait_type": "number",
+      "value": "3"
+    },{
+      "trait_type": "collection",
+      "value": "Женская коллекция"
+    },{
+      "trait_type": "tema",
+      "value": "Кольца, Серьги"
+    }
+  ]
+}

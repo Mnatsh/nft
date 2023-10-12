@@ -2,6 +2,10 @@ import { Address, beginCell, Cell, Contract, contractAddress, ContractProvider, 
 import { CollectionMint, MintValue } from './helpers/collectionHelpers';
 import { encodeOffChainContent } from './helpers/content';
 
+export type PathProject = {
+    pathProject: string;
+};
+
 export type RoyaltyParams = {
     royaltyFactor: number;
     royaltyBase: number;

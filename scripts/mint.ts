@@ -1,5 +1,5 @@
 import { Address, toNano } from 'ton-core';
-import { NftCollection } from '../wrappers/NftCollection';
+import { NftCollection, PathProject } from '../wrappers/NftCollection';
 import { NetworkProvider, sleep } from '@ton-community/blueprint';
 
 export type ParamNft = {
@@ -17,7 +17,9 @@ export async function run(provider: NetworkProvider, args: string[]) {
     //const address = Address.parse(args.length > 0 ? args[0] : await ui.input('Collection address'));
 
     const fs = require('fs');
-    let paramNftN : ParamNft = JSON.parse(fs.readFileSync("scripts/paramsNft/newNftMint.json"));
+    let pathProject : PathProject = JSON.parse(fs.readFileSync("pathProject.json"));
+    let paramNftN : ParamNft = 
+        JSON.parse(fs.readFileSync(pathProject.pathProject + "newNftMint.json"));
   
     const nftCollection = provider.open(NftCollection.createFromAddress(Address.parse(paramNftN.collectionAddress)));
 
@@ -26,7 +28,7 @@ export async function run(provider: NetworkProvider, args: string[]) {
         queryId: Date.now(),    // случайное число
         itemIndex: paramNftN.itemIndex,       //индекс NFT в коллекции. Посмотреть в get коллекции
         itemOwnerAddress: Address.parse(paramNftN.itemOwnerAddress),  //адрес владельца NFT
-        itemContent: paramNftN.itemContent,   //json файл NFT
+        itemContent: `${paramNftN.itemIndex}.json`,   //json файл NFT
         amount: toNano(paramNftN.amount),     //отсылается коллекцией на контракт создаваемого NFT
     });
 

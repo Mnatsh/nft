@@ -1,5 +1,5 @@
 import { Address, beginCell, toNano } from 'ton-core';
-import { NftCollection, buildNftCollectionContentCell } from '../wrappers/NftCollection';
+import { NftCollection, PathProject, buildNftCollectionContentCell } from '../wrappers/NftCollection';
 import { compile, NetworkProvider } from '@ton-community/blueprint';
 
 export type ParamCollection = {
@@ -15,7 +15,10 @@ export type ParamCollection = {
 export async function run(provider: NetworkProvider) {
 
     const fs = require('fs');
-    let paramCollection : ParamCollection = JSON.parse(fs.readFileSync("scripts/paramsNft/newCollection.json"));
+
+    let pathProject : PathProject = JSON.parse(fs.readFileSync("pathProject.json"));
+    let paramCollection : ParamCollection = 
+        JSON.parse(fs.readFileSync(pathProject.pathProject + "newCollection.json"));
 
     const nftCollection = provider.open(NftCollection.createFromConfig({
         ownerAddress: provider.sender().address as Address,
