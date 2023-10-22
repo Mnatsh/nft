@@ -61,8 +61,10 @@ function parseFriendlyAddres(src: string) {
 
 export async function run(provider: NetworkProvider, args: string[]) {
 
-  let addrPick = "EQB+Collection/My/Collection/Muy/Collection+GDLb";
-/* 
+      let addrPick = "EQB+Collection/NftTon/USSR/City/ArtCards/Eva+DLb";
+    // EQB+Collection/NftTon/USSR/City/ArtCards/Eva+EYy
+    //let addrPick = "EQB+Collection/My/Collection/Muy/Collection+GDLb";
+ 
   const data = Buffer.from(addrPick, 'base64');
   const addr = data.subarray(0, 34);
   const calcedCrc = crc16_1.crc16(addr);
@@ -72,10 +74,10 @@ export async function run(provider: NetworkProvider, args: string[]) {
 
   console.log("желаемый адрес",addrPick);
   console.log("адрес с правильной контрольной суммой",data.toString('base64'));
- */
+/* 
 let r = parseFriendlyAddres(addrPick);
 console.log("addrPick",addrPick)
 console.log("Разобранный адрес",r)
-
+*/
 }
 
